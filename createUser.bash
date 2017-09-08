@@ -6,10 +6,8 @@ if [ $# -ne 1 ]; then
 fi
 
 USERNAME=$1
-PASSWD=$2
 
 adduser $USERNAME 
-passwd $USERNAME
 
 # Make the user a sudo
 usermod -aG wheel $USERNAME
