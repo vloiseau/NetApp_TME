@@ -50,7 +50,7 @@ echo "JDK path is $STR."
 # Now put this path in .bashrc file if it already doesn't exists
 if ! cat ~/.bashrc | grep JAVA_HOME 2>&1 >/dev/null; then
     echo "export JAVA_HOME="$STR"" >> ~/.bashrc
-	source ~/.bashrc
+    source ~/.bashrc
     echo "export PATH=$PATH:"$JAVA_HOME"/bin" >> ~/.bashrc
 else
     echo "JAVA_HOME path already exists in the bashrc file. It is set to "$JAVA_HOME""
@@ -59,7 +59,7 @@ fi
 # Check if Hadoop home is set
 if ! cat ~/.bashrc | grep HADOOP_HOME 2>&1 >/dev/null; then
     echo "export HADOOP_HOME=/usr/local/hadoop" >> ~/.bashrc
-	source ~/.bashrc
+    source ~/.bashrc
     echo "export PATH=$PATH:"$HADOOP_HOME"/bin" >> ~/.bashrc
 else
     echo "HADOOP_HOME path already present in the bashrc file. It is set to "$HADOOP_HOME""
