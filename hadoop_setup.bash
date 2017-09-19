@@ -12,7 +12,13 @@ sudo yum install java-1.7.0-openjdk-devel.x86_64 -y
 wget http://archive.apache.org/dist/hadoop/core/stable/hadoop-2.7.4.tar.gz 
 
 # Move it to /usr/local/src, untar it, and move it to /usr/local and rename it as hadoop
-sudo mv hadoop-2.7.4.tar.gz /usr/local/src && sudo untar -xf /usr/local/src/hadoop-2.7.4-src.tar.gz && sudo mv /usr/local/src/hadoop-2.7.4 /usr/local && sudo mv /usr/local/hadoop-1.7.4 /usr/local/hadoop
+# Check if tar file already present in /usr/local/src
+if ! ls /usr/local/src/hadoop-2.7.4.tar.gz 2>&1 >/dev/null; then
+    sudo mv hadoop-2.7.4.tar.gz /usr/local/src && \
+        sudo tar -xf /usr/local/src/hadoop-2.7.4-src.tar.gz && \
+        sudo mv /usr/local/src/hadoop-2.7.4 /usr/local && \
+        sudo mv /usr/local/hadoop-1.7.4 /usr/local/hadoop
+fi
 
 # Set JAVA_HOME in .bashrc file
 # First, find the path
