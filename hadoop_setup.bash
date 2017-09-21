@@ -6,7 +6,7 @@ set -e
 cd /home/faiz89/
 
 # Install jdk
-sudo yum install java-1.7.0-openjdk-devel.x86_64 -y
+sudo yum install java-1.8.0-openjdk
 
 # Make Downloads folder if not exists
 mkdir -p /home/faiz89/Downloads && cd /home/faiz89/Downloads
@@ -42,16 +42,16 @@ fi
 
 # Set JAVA_HOME in .bashrc file
 # First, find the path
-STR="$(java -XshowSettings:properties -version 2>&1 >/dev/null | grep java.home | awk '{print $3}')"
+#STR="$(java -XshowSettings:properties -version 2>&1 >/dev/null | grep java.home | awk '{print $3}')"
 
 # STR would contain "/jre" in the end that we want to remove
-STR="$(echo "${STR:0:${#STR}-4}")"
+#STR="$(echo "${STR:0:${#STR}-4}")"
 
-echo "JDK path is $STR."
+#echo "JDK path is $STR."
 
 # Now put this path in .bashrc file if it already doesn't exists
 if ! cat ~/.bashrc | grep JAVA_HOME 2>&1 >/dev/null; then
-    echo "export JAVA_HOME="$STR"" >> ~/.bashrc
+    echo "export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")" >> ~/.bashrc
     source ~/.bashrc
     echo "export PATH=$PATH:"$JAVA_HOME"/bin" >> ~/.bashrc
 else
