@@ -8,8 +8,10 @@ cd /home/faiz89/
 # Install jdk
 sudo yum install java-1.7.0-openjdk-devel.x86_64 -y
 
+# Make Downloads folder if not exists
+mkdir -p /home/faiz89/Downloads && cd /home/faiz89/Downloads
+
 # Download stable hadoop v2.7.4 if not already present
-cd /home/faiz89/Downloads
 if [ ! -f hadoop-2.7.4.tar.gz ]; then
     echo "Downloading hadoop..."
     wget http://archive.apache.org/dist/hadoop/core/stable/hadoop-2.7.4.tar.gz 
