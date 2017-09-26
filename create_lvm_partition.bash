@@ -2,7 +2,7 @@
 
 PARTITION_NAME=$1
 
-if [ $# -eq 1 ]; then
+if [ $# -ne 1 ]; then
     echo "Enter the partition name like sda4, sdb1, etc."
     exit 1
 fi
