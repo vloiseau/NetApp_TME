@@ -40,6 +40,8 @@ else
     echo "Hadoop folder already exists in /usr/local/. Not overriding..."
 fi
 
+# FIXME: bashrc is not the rigt place to put these environment variables. It should 
+# be set in bash_profile or .profile
 # Set JAVA_HOME in .bashrc file
 # First, find the path
 #STR="$(java -XshowSettings:properties -version 2>&1 >/dev/null | grep java.home | awk '{print $3}')"
