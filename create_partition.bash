@@ -21,7 +21,7 @@ set -ex
 if [ ! $PARTITION_NAME == "sda" ]; then
     echo -e "g\nn\n\n\n\nt\n15\nw" | sudo fdisk /dev/$PARTITION_NAME
 elif [ $PARTITION_NAME == "sda" ]; then
-    echo -e "n\n\n\n\nt\n\n15\nw" 
+    echo -e "n\n\n\n\nt\n\n15\nw" | sudo fdisk /dev/$PARTITION_NAME 
     # Need to reboot since sda was not unmounted and in use
     sudo reboot
 fi
