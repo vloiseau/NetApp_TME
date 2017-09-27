@@ -20,3 +20,8 @@ if sudo mount /dev/hdfs_data/$LV $MOUNT_POINT_LOCATION; then
     echo "Try "df -h" to confirm."
 fi
 
+# Change the ownership of /mnt
+sudo chown -R faiz89:faiz89 /mnt
+
+echo "Remember to format the namenode afterwards."
+
