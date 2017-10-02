@@ -3,6 +3,7 @@
 # REQUIREMENTS
 # 1. Apache Maven - https://maven.apache.org/
 # 2. JDK development environment, not JRE. I did "sudo yum install java-1.8.0-openjdk-devel.x86_64"
+# 3. bc - Install it like "sudo yum install bc -y"
 
 set -ex
 
