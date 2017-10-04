@@ -1,9 +1,9 @@
 #/bin/bash
 
 # Kill any existing running processes
-ps -ef | grep hdfs | awk '{print $2}' | xargs kill
-ps -ef | grep yarn | awk '{print $2}' | xargs kill
-ps -ef | grep history | awk '{print $2}' | xargs kill
+ps -ef | grep 50070 | awk '{print $2}' | xargs kill
+ps -ef | grep 8088 | awk '{print $2}' | xargs kill
+ps -ef | grep 19888 | awk '{print $2}' | xargs kill
 ps -ef | grep ganglia | awk '{print $2}' | xargs kill
 
 # Run the scripts and background them
