@@ -34,5 +34,10 @@
         <value>10.63.150.53:50090</value>
         <description>Secondary namenode address</description>
     </property>
+	
+	<property>
+		<name>dfs.namenode.name.dir</name>
+		<value>file:///tmp/hadoop-faiz89/dfs/name</value>
+	</property>
 
 </configuration>

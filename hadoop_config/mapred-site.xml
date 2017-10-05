@@ -38,10 +38,20 @@
       <value>20480</value>
    </property>
 
-   <property>
-      <name>mapreduce.map.java.opts</name>
-      <value>-Xmx8192m</value>
-   </property>
+	<property>
+		<name>yarn.app.mapreduce.am.resource.mb</name>
+		<value>20480</value>
+	</property>
+
+	<property>
+		<name>yarn.app.mapreduce.am.command-opts</name>
+		<value>-Xmx16384m</value>	
+	</property>
+
+	<property>
+		<name>mapreduce.map.java.opts</name>
+        <value>-Xmx8192m</value>
+    </property>
 
    <property>
       <name>mapreduce.reduce.java.opts</name>
