@@ -2,7 +2,7 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 
 x = ['WordCount', 'TerraSort', 'READ', 'WRITE', 'Aggregation', 'Join', 'Scan', 'Bayes', 'Kmeans', 'Pagerank']
-y1 = [104.75, 21.57, 84.2, 249.46, 8.91, 35.97, 21.85, 521.34, 716.76, 1]
+y1 = [104.75, 21.57, 84.2, 249.46, 8.91, 35.97, 21.85, 521.34, 716.76, 32.68]
 y2 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 y3 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 y4 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
