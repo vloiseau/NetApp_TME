@@ -39,5 +39,10 @@
 		<name>dfs.namenode.name.dir</name>
 		<value>file:///tmp/hadoop-faiz89/dfs/name</value>
 	</property>
+    
+    <property>
+        <name>dfs.datanode.failed.volumes.tolerated</name>
+        <value>6</value>
+    </property>
 
 </configuration>
