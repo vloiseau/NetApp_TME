@@ -1,23 +1,21 @@
 #/bin/bash
 
-# Find out the process using the mount point and kill it
-fuser -c /mnt/sdd1/ | awk '{print $1}' | xargs sudo kill 
-fuser -c /mnt/sde1/ | awk '{print $1}' | xargs sudo kill 
-fuser -c /mnt/sdf1/ | awk '{print $1}' | xargs sudo kill 
-fuser -c /mnt/sdg1/ | awk '{print $1}' | xargs sudo kill 
+# Install lsof if not already there
+# We will use this to check what open files are using the given filesystem
+sudo yum install lsof -y
 
-if sudo umount /mnt/sdd1; then
-    echo "Successfully unmounted /mnt/sdd1"
-fi
-if sudo umount /mnt/sde1; then
-    echo "Successfully unmounted /mnt/sde1" 
-fi
-if sudo umount /mnt/sdf1; then
-    echo "Successfully unmounted /mnt/sdf1"
-fi
-if sudo umount /mnt/sdg1; then
-    echo "Successfully unmounted /mnt/sdg1"
-fi
+# Find out the process using the mount point and kill it
+lsof | grep /mnt/sdd1/ | awk '{print $2}' | xargs kill
+lsof | grep /mnt/sde1/ | awk '{print $2}' | xargs kill
+lsof | grep /mnt/sdf1/ | awk '{print $2}' | xargs kill
+lsof | grep /mnt/sdg1/ | awk '{print $2}' | xargs kill
+
+# Unmount the filesystem
+for i in sdd1 sde1 sdf1 sdg1; do
+    if sudo umount /mnt/$i; then
+        echo "Successfully unmounted /mnt/$i"
+    fi
+done
 
 # Show the partitions
 lsblk
