@@ -1,0 +1,20 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+# Faiz's workers
+10.63.150.136 worker-136
+10.63.150.138 worker-138
+10.63.150.140 worker-140
+10.63.150.142 worker-142
+10.63.150.144 worker-144
+10.63.150.146 worker-146
+10.63.150.163 stlrx2540m1-69.rtpppe.netapp.com
+10.63.150.190 stlrx2540m1-71.rtpppe.netapp.com
+10.63.150.165 stlrx2540m1-70.rtpppe.netapp.com
+
+# Faiz's NameNode
+10.63.150.51 stlrx300s7-137.rtpppe.netapp.com
+
+# Faiz's ResourceManager
+10.63.150.53 stlrx300s7-138.rtpppe.netapp.com
+
