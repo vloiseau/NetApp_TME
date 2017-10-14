@@ -14,3 +14,6 @@ usermod -aG wheel $USERNAME
 
 echo $USERNAME is a sudo user on $(hostname)
 
+# Create password for the user
+passwd $USERNAME
+
