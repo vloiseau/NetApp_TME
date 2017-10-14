@@ -32,22 +32,9 @@ echo "Finished ts job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
 
-# 3. DFSIOE read
-# Prepare the data first
-echo "Starting dfsio read data preparation job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
-echo "Finished dfsio read data preparation job at" $(date +"%T")
-# Sleep for 5 minutes
-sleep 5m
-# Run the job
-echo "Starting dfsio read job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_read.sh \
-	&> /home/faiz89/dfsio_read_output.txt
-echo "Finished dfsio read job at" $(date +"%T")
-# Sleep for 5 minutes
-sleep 5m
 
-# 4. DFSIOE write
+# For some reason, the job errs out when I try to save the output of the DFSIO tests
+# 3. DFSIOE write
 # Prepare the data first
 echo "Starting dfsio write data preparation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
@@ -56,9 +43,22 @@ echo "Finished dfsio write data preparation job at" $(date +"%T")
 sleep 5m
 # Run the job
 echo "Starting dfsio write job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_write.sh \
-	&> /home/faiz89/dfsio_write_output.txt
+/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_write.sh
 echo "Finished dfsio write job at" $(date +"%T")
+# Sleep for 5 minutes
+sleep 5m
+
+# 4. DFSIOE read
+# Prepare the data first
+echo "Starting dfsio read data preparation job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
+echo "Finished dfsio read data preparation job at" $(date +"%T")
+# Sleep for 5 minutes
+sleep 5m
+# Run the job
+echo "Starting dfsio read job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_read.sh
+echo "Finished dfsio read job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
 
