@@ -32,9 +32,25 @@ echo "Finished ts job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
 
+# Use bigdata for DFSIO tests
+sed -i 's/gigantic/bigdata/g' /home/faiz89/git/HiBench/conf/hibench.conf
 
-# For some reason, the job errs out when I try to save the output of the DFSIO tests
-# 3. DFSIOE write
+# For DFSIO tests, the job errs out if I try to save the output to a text file. 
+# 3. DFSIOE read
+# Prepare the data first
+echo "Starting dfsio read data preparation job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
+echo "Finished dfsio read data preparation job at" $(date +"%T")
+# Sleep for 5 minutes
+sleep 5m
+# Run the job
+echo "Starting dfsio read job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_read.sh
+echo "Finished dfsio read job at" $(date +"%T")
+# Sleep for 5 minutes
+sleep 5m
+
+# 4. DFSIOE write
 # Prepare the data first
 echo "Starting dfsio write data preparation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
@@ -48,19 +64,8 @@ echo "Finished dfsio write job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
 
-# 4. DFSIOE read
-# Prepare the data first
-echo "Starting dfsio read data preparation job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
-echo "Finished dfsio read data preparation job at" $(date +"%T")
-# Sleep for 5 minutes
-sleep 5m
-# Run the job
-echo "Starting dfsio read job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_read.sh
-echo "Finished dfsio read job at" $(date +"%T")
-# Sleep for 5 minutes
-sleep 5m
+# Move back to gigantic data
+sed -i 's/bigdata/gigantic/g' /home/faiz89/git/HiBench/conf/hibench.conf
 
 # 5. SQL Aggregation
 # Prepare the data first
@@ -149,5 +154,5 @@ echo "Starting pagerank job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/websearch/pagerank/hadoop/run.sh \
 	&> /home/faiz89/pagerank_output.txt
 echo "Finished pagerank job at" $(date +"%T")
+echo "All jobs finished running. Check hibench.report for the status. Also look at Ganglia." 
 
-echo "All jobs finished running. Check hibench.report for the status. Also look at Ganglia."
