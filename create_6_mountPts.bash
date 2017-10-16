@@ -5,7 +5,9 @@ TO_EXTEND=$2
 
 if [ $# != 2 ]; then
     echo "Enter the lv to be removed and the lv to be extended."
-    echo "For example, remove sdb1-lvm and extend sda4-lvm
+    echo "For example, remove sdb1-lvm and extend sda4-lvm"
+    exit 1
+fi
 
 # Unmount the lv
 sudo umount /dev/hdfs_data/$TO_BE_REMOVED
