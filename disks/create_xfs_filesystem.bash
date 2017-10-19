@@ -1,12 +1,13 @@
 #/bin/bash
 
-LV=$1
+PARTITION=$1
 
 if [ $# -ne 1 ]; then
-    echo "Enter the name of a logical volume on which you are trying to install xfs like sda4-lvm etc."
+    echo "Enter the name of the partition on which you are trying to install xfs. For example sdb1, sdc1 etc."
     exit 1
 fi
 
-# Now create XFS filesystem on this newly created LV
-sudo mkfs.xfs /dev/hdfs_data/$LV
+# Now create XFS filesystem on this newly created partition
+sudo mkfs.xfs /dev/$PARTITION
+
 
