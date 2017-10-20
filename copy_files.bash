@@ -11,7 +11,7 @@ fi
 FILENAME=$1
 REMOTEPATH=$2
 
-for ((i=136; i<=146; i=i+2)); do
+for i in 136 138 140 142 144 163 165 167 51 53; do
     if scp -r -o ConnectTimeout=5 $FILENAME faiz89@10.63.150.$i:$REMOTEPATH; then
 		echo "10.63.150.$i done."
 	else
