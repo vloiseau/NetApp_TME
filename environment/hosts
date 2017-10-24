@@ -1,0 +1,20 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+# Faiz's workers
+10.63.150.136 worker-136
+10.63.150.138 worker-138
+10.63.150.140 worker-140
+10.63.150.142 worker-142
+10.63.150.144 worker-144
+10.63.150.146 worker-146
+10.63.150.163 worker-163
+10.63.150.165 worker-165
+10.63.150.167 worker-167
+
+# Faiz's NameNode
+10.63.150.51 master-51
+
+# Faiz's ResourceManager
+10.63.150.53 master-53
+
