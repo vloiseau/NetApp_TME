@@ -33,7 +33,7 @@ echo "Finished ts job at" $(date +"%T")
 sleep 5m
 
 # Use bigdata for DFSIO tests
-sed -i 's/gigantic/bigdata/g' /home/faiz89/git/HiBench/conf/hibench.conf
+#sed -i 's/gigantic/bigdata/g' /home/faiz89/git/HiBench/conf/hibench.conf
 
 # For DFSIO tests, the job errs out if I try to save the output to a text file. 
 # 3. DFSIOE read
@@ -65,7 +65,7 @@ echo "Finished dfsio write job at" $(date +"%T")
 sleep 5m
 
 # Move back to gigantic data
-sed -i 's/bigdata/gigantic/g' /home/faiz89/git/HiBench/conf/hibench.conf
+#sed -i 's/bigdata/gigantic/g' /home/faiz89/git/HiBench/conf/hibench.conf
 
 # 5. SQL Aggregation
 # Prepare the data first
