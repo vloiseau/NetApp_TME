@@ -12,7 +12,7 @@ sleep 5m
 # Run the job
 echo "Starting wc job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/wordcount/hadoop/run.sh \
-	&> /home/faiz89/wc_output.txt
+	> /home/faiz89/wc_output.txt
 echo "Finished wc job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
@@ -27,7 +27,7 @@ sleep 5m
 # Run the job
 echo "Starting ts job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/terasort/hadoop/run.sh \
-	&> /home/faiz89/ts_output.txt
+	> /home/faiz89/ts_output.txt
 echo "Finished ts job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
@@ -77,7 +77,7 @@ sleep 5m
 # Run the job
 echo "Starting sql aggregation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/sql/aggregation/hadoop/run.sh \
-	&> /home/faiz89/sql_aggre_output.txt
+	> /home/faiz89/sql_aggre_output.txt
 echo "Finished sql aggregation job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
@@ -92,7 +92,7 @@ sleep 5m
 # Run the job
 echo "Starting sql join job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/sql/join/hadoop/run.sh \
-	&> /home/faiz89/sql_join_output.txt
+	> /home/faiz89/sql_join_output.txt
 echo "Finished sql join job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
@@ -107,7 +107,7 @@ sleep 5m
 # Run the job
 echo "Starting sql scan job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/sql/scan/hadoop/run.sh \
-	&> /home/faiz89/sql_scan_output.txt
+	> /home/faiz89/sql_scan_output.txt
 echo "Finished sql scan job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
@@ -122,7 +122,7 @@ sleep 5m
 # Run the job
 echo "Starting pagerank job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/websearch/pagerank/hadoop/run.sh \
-	&> /home/faiz89/pagerank_output.txt
+	> /home/faiz89/pagerank_output.txt
 echo "Finished pagerank job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
@@ -138,7 +138,7 @@ sleep 5m
 # Run the job
 echo "Starting ml bayes job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/ml/bayes/hadoop/run.sh \
-	&> /home/faiz89/ml_bayes_output.txt
+	> /home/faiz89/ml_bayes_output.txt
 echo "Finished ml bayes job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
@@ -153,7 +153,7 @@ sleep 5m
 # Run the job
 echo "Starting ml kmeans job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/ml/kmeans/hadoop/run.sh \
-	&> /home/faiz89/ml_kmeans.txt
+	> /home/faiz89/ml_kmeans.txt
 echo "Finished ml kmeans job at" $(date +"%T")
 
 echo "All jobs finished running. Check hibench.report for the status. Also look at Ganglia." 
