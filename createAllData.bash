@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# We only need to create data once
+
 set -ex
 
 # 1. Wordcount
