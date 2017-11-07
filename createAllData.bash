@@ -84,4 +84,5 @@ echo "Finished ml kmeans data preparation job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
 
-echo "All data generation jobs finished running. Now start the actual jobs!
+echo "All data generation jobs finished running. Now start the actual jobs!"
+
