@@ -80,7 +80,14 @@ echo "Finished pagerank job at" $(date +"%T")
 sleep 5m
 
 # ML jobs take a lot more time than others. Hence, running at the end
-# 9. ML Bayes
+# 9. ML Kmeans
+# Run the job
+echo "Starting ml kmeans job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/ml/kmeans/hadoop/run.sh \
+	> /home/faiz89/ml_kmeans.txt
+echo "Finished ml kmeans job at" $(date +"%T")
+
+# 10. ML Bayes
 # Run the job
 echo "Starting ml bayes job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/ml/bayes/hadoop/run.sh \
@@ -88,13 +95,6 @@ echo "Starting ml bayes job at" $(date +"%T")
 echo "Finished ml bayes job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
-
-# 10. ML Kmeans
-# Run the job
-echo "Starting ml kmeans job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/ml/kmeans/hadoop/run.sh \
-	> /home/faiz89/ml_kmeans.txt
-echo "Finished ml kmeans job at" $(date +"%T")
 
 echo "All jobs finished running. Check hibench.report for the status. Also look at Ganglia." 
 
