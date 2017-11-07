@@ -86,6 +86,8 @@ echo "Starting ml kmeans job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/ml/kmeans/hadoop/run.sh \
 	> /home/faiz89/ml_kmeans.txt
 echo "Finished ml kmeans job at" $(date +"%T")
+# Sleep for 5 minutes
+sleep 5m
 
 # 10. ML Bayes
 # Run the job
@@ -93,8 +95,6 @@ echo "Starting ml bayes job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/ml/bayes/hadoop/run.sh \
 	> /home/faiz89/ml_bayes_output.txt
 echo "Finished ml bayes job at" $(date +"%T")
-# Sleep for 5 minutes
-sleep 5m
 
 echo "All jobs finished running. Check hibench.report for the status. Also look at Ganglia." 
 
