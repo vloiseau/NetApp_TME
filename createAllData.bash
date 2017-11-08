@@ -68,21 +68,18 @@ echo "Finished pagerank data preparation job at" $(date +"%T")
 # Sleep for 5 minutes
 sleep 5m
 
-# 9. ML Bayes
-# Prepare the data first
-echo "Starting ml bayes data preparation job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/ml/bayes/prepare/prepare.sh
-echo "Finished ml bayes data preparation job at" $(date +"%T")
-# Sleep for 5 minutes
-sleep 5m
-
-# 10. ML Kmeans
+# 9. ML Kmeans
 # Prepare the data first
 echo "Starting ml kmeans data preparation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/ml/kmeans/prepare/prepare.sh
 echo "Finished ml kmeans data preparation job at" $(date +"%T")
 # Sleep for 5 minutes
-sleep 5m
+#sleep 5m
+
+# 10. ML Bayes
+# Prepare the data first
+#echo "Starting ml bayes data preparation job at" $(date +"%T")
+#/home/faiz89/git/HiBench/bin/workloads/ml/bayes/prepare/prepare.sh
+#echo "Finished ml bayes data preparation job at" $(date +"%T")
 
 echo "All data generation jobs finished running. Now start the actual jobs!"
-
