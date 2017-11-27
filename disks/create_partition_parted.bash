@@ -9,4 +9,9 @@ fi
 
 set -ex
 
+# Create a GPT label first
+sudo parted mklabel gpt /dev/$PARTITION_NAME
+
+# Create the partition now
 echo -e "mkpart primary xfs 1 -1\nquit" | sudo parted /dev/$PARTITION_NAME
+
