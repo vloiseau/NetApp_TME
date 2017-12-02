@@ -9,72 +9,72 @@ set -ex
 echo "Starting wc data preparation at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/wordcount/prepare/prepare.sh 
 echo "Finished wc data preparation job at" $(date +"%T")
-# Sleep for 5 minutes
-sleep 5m
+# Sleep for 1 minute
+sleep 1m
 
 # 2. Terrasort
 # Prepare the data first
 echo "Starting ts data preparation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/terasort/prepare/prepare.sh
-# Sleep for 5 minutes
+# Sleep for 1 minute
 echo "Finished ts data preparation job at" $(date +"%T")
-sleep 5m
+sleep 1m
 
 # 3. DFSIOE read and write
 # Prepare the data first
 echo "Starting dfsio read data preparation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
 echo "Finished dfsio read data preparation job at" $(date +"%T")
-# Sleep for 5 minutes
-sleep 5m
+# Sleep for 1 minute
+sleep 1m
 
 # 4. DFSIOE write
 # Prepare the data first
 #echo "Starting dfsio write data preparation job at" $(date +"%T")
 #/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
 #echo "Finished dfsio write data preparation job at" $(date +"%T")
-# Sleep for 5 minutes
-#sleep 5m
+# Sleep for 1 minute
+#sleep 1m
 
 # 5. SQL Aggregation
 # Prepare the data first
 echo "Starting sql aggregation data preparation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/sql/aggregation/prepare/prepare.sh
 echo "Finished sql aggregation data preparation job at" $(date +"%T")
-# Sleep for 5 minutes
-sleep 5m
+# Sleep for 1 minute
+sleep 1m
 
 # 6. SQL join
 # Prepare the data first
 echo "Starting sql join data preparation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/sql/join/prepare/prepare.sh
 echo "Finished sql join data preparation job at" $(date +"%T")
-# Sleep for 5 minutes
-sleep 5m
+# Sleep for 1 minute
+sleep 1m
 
 # 7. SQL scan
 # Prepare the data first
 echo "Starting sql scan data preparation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/sql/scan/prepare/prepare.sh
 echo "Finished sql scan data preparation job at" $(date +"%T")
-# Sleep for 5 minutes
-sleep 5m
+# Sleep for 1 minute
+sleep 1m
 
 # 8. Pagerank
 # Prepare the data first
 echo "Starting pagerank data preparation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/websearch/pagerank/prepare/prepare.sh
 echo "Finished pagerank data preparation job at" $(date +"%T")
-# Sleep for 5 minutes
-sleep 5m
+# Sleep for 1 minute
+sleep 1m
 
 # 9. ML Kmeans
 # Prepare the data first
 echo "Starting ml kmeans data preparation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/ml/kmeans/prepare/prepare.sh
 echo "Finished ml kmeans data preparation job at" $(date +"%T")
-# Sleep for 5 minutes
-#sleep 5m
+# Sleep for 1 minute
+#sleep 1m
 
 # 10. ML Bayes
 # Prepare the data first
