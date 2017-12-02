@@ -78,9 +78,9 @@ echo "Finished ml kmeans data preparation job at" $(date +"%T")
 
 # 10. ML Bayes
 # Prepare the data first
-echo "Starting ml bayes data preparation job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/ml/bayes/prepare/prepare.sh
-echo "Finished ml bayes data preparation job at" $(date +"%T")
+#echo "Starting ml bayes data preparation job at" $(date +"%T")
+#/home/faiz89/git/HiBench/bin/workloads/ml/bayes/prepare/prepare.sh
+#echo "Finished ml bayes data preparation job at" $(date +"%T")
 
 echo "All data generation jobs finished running. Now start the actual jobs!"
 
