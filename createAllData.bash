@@ -20,7 +20,7 @@ echo "Starting ts data preparation job at" $(date +"%T")
 echo "Finished ts data preparation job at" $(date +"%T")
 sleep 5m
 
-# 3. DFSIOE read
+# 3. DFSIOE read and write
 # Prepare the data first
 echo "Starting dfsio read data preparation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
@@ -30,11 +30,11 @@ sleep 5m
 
 # 4. DFSIOE write
 # Prepare the data first
-echo "Starting dfsio write data preparation job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
-echo "Finished dfsio write data preparation job at" $(date +"%T")
+#echo "Starting dfsio write data preparation job at" $(date +"%T")
+#/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
+#echo "Finished dfsio write data preparation job at" $(date +"%T")
 # Sleep for 5 minutes
-sleep 5m
+#sleep 5m
 
 # 5. SQL Aggregation
 # Prepare the data first
@@ -78,8 +78,9 @@ echo "Finished ml kmeans data preparation job at" $(date +"%T")
 
 # 10. ML Bayes
 # Prepare the data first
-#echo "Starting ml bayes data preparation job at" $(date +"%T")
-#/home/faiz89/git/HiBench/bin/workloads/ml/bayes/prepare/prepare.sh
-#echo "Finished ml bayes data preparation job at" $(date +"%T")
+echo "Starting ml bayes data preparation job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/ml/bayes/prepare/prepare.sh
+echo "Finished ml bayes data preparation job at" $(date +"%T")
 
 echo "All data generation jobs finished running. Now start the actual jobs!"
+
