@@ -3,6 +3,11 @@
 set -ex
 
 # 1. Wordcount
+
+# Prepare the data first
+echo "Starting wc data preparation at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/micro/wordcount/prepare/prepare.sh 
+sleep 1m
 # Run the job
 echo "Starting wc job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/wordcount/hadoop/run.sh \
@@ -18,6 +23,10 @@ echo "Finished wc job at" $(date +"%T")
 sleep 1m
 
 # 2. Terrasort
+# Prepare the data first
+echo "Starting ts data preparation job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/micro/terasort/prepare/prepare.sh
+sleep 1m
 # Run the job
 echo "Starting ts job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/terasort/hadoop/run.sh \
@@ -38,6 +47,10 @@ sleep 1m
 # For DFSIO tests, the job errs out if I try to save the output to a text file. 
 
 # 3. DFSIOE write
+# Prepare the data first
+echo "Starting dfsio read data preparation job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
+sleep 1m
 # Run the job
 echo "Starting dfsio write job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_write.sh
@@ -50,6 +63,10 @@ echo "Finished dfsio write job at" $(date +"%T")
 sleep 1m
 
 # 4. DFSIOE read
+# Prepare the data first
+echo "Starting dfsio read data preparation job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/prepare/prepare.sh
+sleep 1m
 # Run the job
 echo "Starting dfsio read job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_read.sh
@@ -66,6 +83,10 @@ sleep 1m
 #sed -i 's/bigdata/gigantic/g' /home/faiz89/git/HiBench/conf/hibench.conf
 
 # 5. SQL Aggregation
+# Prepare the data first
+echo "Starting sql aggregation data preparation job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/sql/aggregation/prepare/prepare.sh
+sleep 1m
 # Run the job
 echo "Starting sql aggregation job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/sql/aggregation/hadoop/run.sh \
@@ -81,6 +102,10 @@ echo "Finished sql aggregation job at" $(date +"%T")
 sleep 1m
 
 # 6. SQL join
+# Prepare the data first
+echo "Starting sql join data preparation job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/sql/join/prepare/prepare.sh
+sleep 1m
 # Run the job
 echo "Starting sql join job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/sql/join/hadoop/run.sh \
@@ -96,6 +121,10 @@ echo "Finished sql join job at" $(date +"%T")
 sleep 1m
 
 # 7. SQL scan
+# Prepare the data first
+echo "Starting sql scan data preparation job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/sql/scan/prepare/prepare.sh
+sleep 1m
 # Run the job
 echo "Starting sql scan job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/sql/scan/hadoop/run.sh \
@@ -111,6 +140,10 @@ echo "Finished sql scan job at" $(date +"%T")
 sleep 1m
 
 # 8. Pagerank
+# Prepare the data first
+echo "Starting pagerank data preparation job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/websearch/pagerank/prepare/prepare.sh
+sleep 1m
 # Run the job
 echo "Starting pagerank job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/websearch/pagerank/hadoop/run.sh \
@@ -127,6 +160,10 @@ sleep 1m
 
 # ML jobs take a lot more time than others. Hence, running at the end
 # 9. ML Kmeans
+# Prepare the data first
+echo "Starting ml kmeans data preparation job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/ml/kmeans/prepare/prepare.sh
+sleep 1m
 # Run the job
 echo "Starting ml kmeans job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/ml/kmeans/hadoop/run.sh \
