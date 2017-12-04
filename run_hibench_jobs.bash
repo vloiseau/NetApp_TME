@@ -36,7 +36,20 @@ sleep 1m
 #sed -i 's/gigantic/bigdata/g' /home/faiz89/git/HiBench/conf/hibench.conf
 
 # For DFSIO tests, the job errs out if I try to save the output to a text file. 
-# 3. DFSIOE read
+
+# 3. DFSIOE write
+# Run the job
+echo "Starting dfsio write job at" $(date +"%T")
+/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_write.sh
+sleep 1m
+/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_write.sh
+sleep 1m
+/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_write.sh
+echo "Finished dfsio write job at" $(date +"%T")
+# Sleep for 1 minute
+sleep 1m
+
+# 4. DFSIOE read
 # Run the job
 echo "Starting dfsio read job at" $(date +"%T")
 /home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_read.sh
@@ -48,17 +61,6 @@ echo "Finished dfsio read job at" $(date +"%T")
 # Sleep for 1 minute
 sleep 1m
 
-# 4. DFSIOE write
-# Run the job
-echo "Starting dfsio write job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_write.sh
-sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_write.sh
-sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/micro/dfsioe/hadoop/run_write.sh
-echo "Finished dfsio write job at" $(date +"%T")
-# Sleep for 1 minute
-sleep 1m
 
 # Move back to gigantic data
 #sed -i 's/bigdata/gigantic/g' /home/faiz89/git/HiBench/conf/hibench.conf
