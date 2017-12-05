@@ -10,18 +10,16 @@ echo "Starting wc data preparation at" $(date +"%T")
 sleep 1m
 # Run the job
 echo "Starting wc job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/micro/wordcount/hadoop/run.sh \
-	> /home/faiz89/wc_output1.txt
+/home/faiz89/git/HiBench/bin/workloads/micro/wordcount/hadoop/run.sh 
 sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/micro/wordcount/hadoop/run.sh \
-	> /home/faiz89/wc_output2.txt
+/home/faiz89/git/HiBench/bin/workloads/micro/wordcount/hadoop/run.sh
 sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/micro/wordcount/hadoop/run.sh \
-	> /home/faiz89/wc_output3.txt
+/home/faiz89/git/HiBench/bin/workloads/micro/wordcount/hadoop/run.sh
 echo "Finished wc job at" $(date +"%T")
 # Sleep for 1 minute
 sleep 1m
 
+: >> 'START'
 # 2. Terrasort
 # Prepare the data first
 echo "Starting ts data preparation job at" $(date +"%T")
@@ -77,7 +75,7 @@ sleep 1m
 echo "Finished dfsio read job at" $(date +"%T")
 # Sleep for 1 minute
 sleep 1m
-
+START
 
 # Move back to gigantic data
 #sed -i 's/bigdata/gigantic/g' /home/faiz89/git/HiBench/conf/hibench.conf
@@ -89,14 +87,11 @@ echo "Starting sql aggregation data preparation job at" $(date +"%T")
 sleep 1m
 # Run the job
 echo "Starting sql aggregation job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/sql/aggregation/hadoop/run.sh \
-	> /home/faiz89/sql_aggre_output1.txt
+/home/faiz89/git/HiBench/bin/workloads/sql/aggregation/hadoop/run.sh
 sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/sql/aggregation/hadoop/run.sh \
-	> /home/faiz89/sql_aggre_output2.txt
+/home/faiz89/git/HiBench/bin/workloads/sql/aggregation/hadoop/run.sh
 sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/sql/aggregation/hadoop/run.sh \
-	> /home/faiz89/sql_aggre_output3.txt
+/home/faiz89/git/HiBench/bin/workloads/sql/aggregation/hadoop/run.sh
 echo "Finished sql aggregation job at" $(date +"%T")
 # Sleep for 1 minute
 sleep 1m
@@ -108,14 +103,11 @@ echo "Starting sql join data preparation job at" $(date +"%T")
 sleep 1m
 # Run the job
 echo "Starting sql join job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/sql/join/hadoop/run.sh \
-	> /home/faiz89/sql_join_output1.txt
+/home/faiz89/git/HiBench/bin/workloads/sql/join/hadoop/run.sh
 sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/sql/join/hadoop/run.sh \
-	> /home/faiz89/sql_join_output2.txt
+/home/faiz89/git/HiBench/bin/workloads/sql/join/hadoop/run.sh
 sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/sql/join/hadoop/run.sh \
-	> /home/faiz89/sql_join_output3.txt
+/home/faiz89/git/HiBench/bin/workloads/sql/join/hadoop/run.sh
 echo "Finished sql join job at" $(date +"%T")
 # Sleep for 1 minute
 sleep 1m
@@ -127,14 +119,11 @@ echo "Starting sql scan data preparation job at" $(date +"%T")
 sleep 1m
 # Run the job
 echo "Starting sql scan job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/sql/scan/hadoop/run.sh \
-	> /home/faiz89/sql_scan_output1.txt
+/home/faiz89/git/HiBench/bin/workloads/sql/scan/hadoop/run.sh
 sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/sql/scan/hadoop/run.sh \
-	> /home/faiz89/sql_scan_output2.txt
+/home/faiz89/git/HiBench/bin/workloads/sql/scan/hadoop/run.sh
 sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/sql/scan/hadoop/run.sh \
-	> /home/faiz89/sql_scan_output3.txt
+/home/faiz89/git/HiBench/bin/workloads/sql/scan/hadoop/run.sh
 echo "Finished sql scan job at" $(date +"%T")
 # Sleep for 1 minute
 sleep 1m
@@ -146,14 +135,11 @@ echo "Starting pagerank data preparation job at" $(date +"%T")
 sleep 1m
 # Run the job
 echo "Starting pagerank job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/websearch/pagerank/hadoop/run.sh \
-	> /home/faiz89/pagerank_output1.txt
+/home/faiz89/git/HiBench/bin/workloads/websearch/pagerank/hadoop/run.sh
 sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/websearch/pagerank/hadoop/run.sh \
-	> /home/faiz89/pagerank_output2.txt
+/home/faiz89/git/HiBench/bin/workloads/websearch/pagerank/hadoop/run.sh
 sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/websearch/pagerank/hadoop/run.sh \
-	> /home/faiz89/pagerank_output3.txt
+/home/faiz89/git/HiBench/bin/workloads/websearch/pagerank/hadoop/run.sh
 echo "Finished pagerank job at" $(date +"%T")
 # Sleep for 1 minute
 sleep 1m
@@ -166,14 +152,11 @@ echo "Starting ml kmeans data preparation job at" $(date +"%T")
 sleep 1m
 # Run the job
 echo "Starting ml kmeans job at" $(date +"%T")
-/home/faiz89/git/HiBench/bin/workloads/ml/kmeans/hadoop/run.sh \
-	> /home/faiz89/ml_kmeans1.txt
+/home/faiz89/git/HiBench/bin/workloads/ml/kmeans/hadoop/run.sh
 sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/ml/kmeans/hadoop/run.sh \
-	> /home/faiz89/ml_kmeans2.txt
+/home/faiz89/git/HiBench/bin/workloads/ml/kmeans/hadoop/run.sh
 sleep 1m
-/home/faiz89/git/HiBench/bin/workloads/ml/kmeans/hadoop/run.sh \
-	> /home/faiz89/ml_kmeans3.txt
+/home/faiz89/git/HiBench/bin/workloads/ml/kmeans/hadoop/run.sh
 echo "Finished ml kmeans job at" $(date +"%T")
 # Sleep for 1 minute
 #sleep 1m
