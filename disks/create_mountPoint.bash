@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DISK=$1
-MOUNT_POINT_LOCATION==$2
+MOUNT_POINT_LOCATION=$2
 
 if [ $# -ne 2 ]; then
     echo "Give the path of the disk trying to be mounted and the mount point." 
