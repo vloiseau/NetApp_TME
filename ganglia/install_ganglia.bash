@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # On the server
-sudo yum install ganglia rrdtool ganglia-gmetad ganglia-gmond ganglia-web 
+sudo yum update -y && sudo yum install epel-release -y
+sudo yum install ganglia rrdtool ganglia-gmetad ganglia-gmond ganglia-web -y
 
 # Make change to the /etc/ganglia/gmetad.conf
 # Also make changes to /etc/ganglia/gmond.conf
