@@ -1,0 +1,35 @@
+# https://github.com/conaku/Big-Data-Ecosystem-on-Linux-on-Power/wiki/Hadoop-Performance-Tuning-on-IBM-OpenPOWER
+
+net.core.wmem_default=262144
+net.core.rmem_default=262144
+net.core.wmem_max=16777216
+net.core.rmem_max=16777216
+net.core.netdev_max_backlog=250000
+net.ipv4.tcp_wmem="4096 262144 16777216"
+net.ipv4.tcp_rmem="4096 262144 16777216"
+net.ipv4.tcp_timestamps=0
+net.ipv4.tcp_no_metrics_save=1
+net.ipv4.tcp_mem="16777216 16777216 16777216"
+net.ipv4.tcp_sack=1
+vm.dirty_background_ratio=1
+vm.dirty_ratio=2
+vm.dirty_writeback_centisecs=100
+vm.dirty_expire_centisecs=1000
+vm.swappiness=5
+kernel.sem="250 32000 100 128"
+fs.aio-max-nr=1048576
+net.core.somaxconn=1000
+vm.min_free_kbytes=16777216
+
+# set min free memory, replace 1024 with 6% of the total amount of physical memory
+vm.min_free_kbytes= 1024
+# enable tcp window scaling
+net.ipv4.tcp_window_scaling = 1
+# increase Linux TCP buffer limits
+net.core.rmem_max = 8388608
+net.core.wmem_max = 8388608
+# increase default and maximum Linux TCP buffer sizes
+net.ipv4.tcp_rmem = 4096 262144 8388608
+net.ipv4.tcp_wmem = 4096 262144 8388608
+# increase max backlog to avoid dropped packets
+net.core.netdev_max_backlog=2500
