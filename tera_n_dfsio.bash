@@ -5,7 +5,7 @@
 # Remove the old data first
 hadoop fs -rm -r  /HiBench/Dfsioe/terasort-input
 # Run the job
-/usr/hdp/2.6.2.0-205/hadoop/bin/hadoop --config /usr/hdp/2.6.2.0-205/hadoop/etc/hadoop jar /usr/hdp/2.6.2.0-205/hadoop/../hadoop-mapreduce/hadoop-mapreduce-examples.jar teragen -D mapreduce.job.maps=304 -D mapreduce.job.reduces=304 10995116277 /HiBench/Dfsioe/terasort-input
+time sudo -u mapr /opt/mapr/hadoop/hadoop-2.7.0/bin/hadoop --config /opt/mapr/hadoop/hadoop-2.7.0/etc/hadoop jar /opt/mapr/hadoop/hadoop-2.7.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.*.jar teragen -D mapreduce.job.maps=304 -D mapreduce.job.reduces=304 10995116277 /HiBench/Dfsioe/terasort-input
 sleep 1m
 # RUN 2
 # Remove the old data first
