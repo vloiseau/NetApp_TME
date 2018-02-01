@@ -3,19 +3,31 @@
 # Teragen
 # RUN 1
 # Remove the old data first
-hadoop fs -rm -r  /HiBench/Dfsioe/terasort-input
+hadoop fs -rm -r  /HiBench
+maprcli volume create -name HiBench -path /HiBench -replication 1
+hadoop fs -chmod 777 /HiBench
+hadoop fs -mkdir /HiBench/Dfsioe
+hadoop fs -mkdir /HiBench/Dfsioe/terasort-input
 # Run the job
 time sudo -u mapr /opt/mapr/hadoop/hadoop-2.7.0/bin/hadoop --config /opt/mapr/hadoop/hadoop-2.7.0/etc/hadoop jar /opt/mapr/hadoop/hadoop-2.7.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.*.jar teragen -D mapreduce.job.maps=304 -D mapreduce.job.reduces=304 10995116277 /HiBench/Dfsioe/terasort-input
 sleep 1m
 # RUN 2
 # Remove the old data first
-hadoop fs -rm -r  /HiBench/Dfsioe/terasort-input
+hadoop fs -rm -r  /HiBench
+maprcli volume create -name HiBench -path /HiBench -replication 1
+hadoop fs -chmod 777 /HiBench
+hadoop fs -mkdir /HiBench/Dfsioe
+hadoop fs -mkdir /HiBench/Dfsioe/terasort-input
 # Run the job
 time sudo -u mapr /opt/mapr/hadoop/hadoop-2.7.0/bin/hadoop --config /opt/mapr/hadoop/hadoop-2.7.0/etc/hadoop jar /opt/mapr/hadoop/hadoop-2.7.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.*.jar teragen -D mapreduce.job.maps=304 -D mapreduce.job.reduces=304 10995116277 /HiBench/Dfsioe/terasort-input
 sleep 1m
 # RUN 3
 # Remove the old data first
-hadoop fs -rm -r  /HiBench/Dfsioe/terasort-input
+hadoop fs -rm -r  /HiBench
+maprcli volume create -name HiBench -path /HiBench -replication 1
+hadoop fs -chmod 777 /HiBench
+hadoop fs -mkdir /HiBench/Dfsioe
+hadoop fs -mkdir /HiBench/Dfsioe/terasort-input
 # Run the job
 time sudo -u mapr /opt/mapr/hadoop/hadoop-2.7.0/bin/hadoop --config /opt/mapr/hadoop/hadoop-2.7.0/etc/hadoop jar /opt/mapr/hadoop/hadoop-2.7.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.*.jar teragen -D mapreduce.job.maps=304 -D mapreduce.job.reduces=304 10995116277 /HiBench/Dfsioe/terasort-input
 sleep 1m
