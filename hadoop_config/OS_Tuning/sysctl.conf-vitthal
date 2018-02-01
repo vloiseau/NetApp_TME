@@ -1,0 +1,5 @@
+# https://www.slideshare.net/vgogate/hadoop-configuration-performance-tuning
+vm.swappiness=0
+vm.overcommit_memory=1
+vm.overcommit_ratio=100
+net.core.somaxconn=1024

@@ -8,5 +8,5 @@ if [ $# -ne 1 ]; then
 fi
 
 # Now create XFS filesystem on this newly created partition
-sudo mkfs.xfs -f /dev/$PARTITION
+sudo mkfs.xfs -f -d su=1m,sw=8 /dev/$PARTITION
 
