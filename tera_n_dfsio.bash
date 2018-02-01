@@ -35,9 +35,14 @@ sleep 1m
 # Terasort
 # RUN 1
 # Remove the old output
-hadoop fs -rm -r /HiBench/Dfsioe/terasort-output
+hadoop fs -rm -r  /HiBench
+maprcli volume create -name HiBench -path /HiBench -replication 1
+hadoop fs -chmod 777 /HiBench
+hadoop fs -mkdir /HiBench/Dfsioe
+hadoop fs -mkdir /HiBench/Dfsioe/terasort-output
+hadoop fs -mkdir /HiBench/Dfsioe/terasort-input
 # Run the job
-/usr/hdp/2.6.2.0-205/hadoop/bin/hadoop --config /usr/hdp/2.6.2.0-205/hadoop/etc/hadoop jar /usr/hdp/2.6.2.0-205/hadoop/../hadoop-mapreduce/hadoop-mapreduce-examples.jar terasort -D mapreduce.job.reduces=304 /HiBench/Dfsioe/terasort-input /HiBench/Dfsioe/terasort-output
+time sudo -u mapr /opt/mapr/hadoop/hadoop-2.7.0/bin/hadoop --config /opt/mapr/hadoop/hadoop-2.7.0/etc/hadoop jar /opt/mapr/hadoop/hadoop-2.7.0/share/hadoop/hadoop-mapreduce-examples.jar terasort -D mapreduce.job.reduces=304 /HiBench/Dfsioe/terasort-input /HiBench/Dfsioe/terasort-output
 sleep 1m
 # RUN 2
 # Remove the old output
