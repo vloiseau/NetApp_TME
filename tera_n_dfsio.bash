@@ -37,7 +37,7 @@ maprcli volume create -name HiBench -path /HiBench -replication 2
 hadoop fs -chmod 777 /HiBench
 hadoop fs -mkdir /HiBench/Dfsioe
 # Run the job
-time sudo -u mapr /opt/mapr/hadoop/hadoop-2.7.0/bin/hadoop --config /opt/mapr/hadoop/hadoop-2.7.0/etc/hadoop jar /opt/mapr/hadoop/hadoop-2.7.0/share/hadoop/hadoop-mapreduce-examples-2.*.jar terasort -D mapreduce.job.reduces=304 /HiBench/Dfsioe/terasort-input /HiBench/Dfsioe/terasort-output
+time sudo -u mapr /opt/mapr/hadoop/hadoop-2.7.0/bin/hadoop --config /opt/mapr/hadoop/hadoop-2.7.0/etc/hadoop jar  /opt/mapr/hadoop/hadoop-2.7.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.*.jar terasort -D mapreduce.job.reduces=304 /HiBench/Dfsioe/terasort-input /HiBench/Dfsioe/terasort-output
 sleep 1m
 # RUN 2
 # Remove the old output
